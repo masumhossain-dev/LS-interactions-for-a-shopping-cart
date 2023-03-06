@@ -5,7 +5,15 @@ const getInputValues = id =>{
    return inputValue;
 }
 const addProduct = () =>{
-   const nameField = getInputValues('name-field');
-   const quantityField = getInputValues('quantity-field');
-   console.log(nameField, quantityField);
+   const product = getInputValues('name-field');
+   const quantity = getInputValues('quantity-field');
+   displayProduct(product, quantity);
+   localStorage.setItem(product, quantity)
+}
+
+const displayProduct = (product, quantity) =>{
+   const productContainer = document.getElementById('product-container');
+   const li = document.createElement('li');
+   li.innerText = `${product}: ${quantity}`
+   productContainer.appendChild(li);
 }
