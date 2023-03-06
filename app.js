@@ -1,8 +1,11 @@
 const getInputValues = id =>{
-   const inputField = document.getElementById(id).value;
-   return inputField;
+   const inputField = document.getElementById(id);
+   const inputValue = inputField.value;
+   inputField.value = '';
+   return inputValue;
 }
 const addProduct = () =>{
    const nameField = getInputValues('name-field');
-   console.log(nameField);
+   const quantityField = getInputValues('quantity-field');
+   console.log(nameField, quantityField);
 }
